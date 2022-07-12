@@ -14,9 +14,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
 
-    var arguments3 = ModalRoute.of(context)!.settings.arguments;
-
-    var data = arguments3!=null? arguments3 as  Map<String, dynamic>:{};
+    data = data.isNotEmpty ? data = data :
+      data = ModalRoute.of(context)!.settings.arguments as Map;
 
     // data = (data.isNotEmpty ?? true) ? ModalRoute.of(context)!.settings.arguments as Map : data;
     print(data);
